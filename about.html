@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - Shalom Church</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#0b0b0b;
+  color:white;
+}
+
+nav{
+  position:fixed;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  z-index:1000;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo img{
+  width:40px;
+  border-radius:50%;
+}
+
+nav a{
+  color:white;
+  margin:0 10px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#00ffd5;
+}
+
+.section{
+  padding:100px 20px;
+  text-align:center;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  margin-top:40px;
+}
+
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:25px;
+  border-radius:15px;
+}
+
+footer{
+  background:#000;
+  padding:30px;
+  text-align:center;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">
+    <img src="assets/images/logo.png" alt="logo">
+    <h2>SHALOM</h2>
+  </div>
+
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="campuses.html">Campuses</a>
+    <a href="prayer.html">Prayer</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- ABOUT SECTION -->
+<section class="section">
+  <div class="container">
+    <h1>About Our Church</h1>
+    <p style="margin-top:20px;">
+      Shalom Church is a faith-filled community committed to transforming lives through the love of Jesus Christ.
+      We exist to worship God, serve people, and expand His kingdom across every generation and campus.
+    </p>
+  </div>
+</section>
+
+<!-- MISSION & VISION -->
+<section class="section">
+  <h2>Our Mission & Vision</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>🎯 Mission</h3>
+      <p>To lead people into a growing relationship with God through worship, word, and service.</p>
+    </div>
+
+    <div class="card">
+      <h3>👁️ Vision</h3>
+      <p>To see transformed lives, strong families, and thriving communities across all campuses.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section class="section">
+  <h2>Leadership</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Senior Pastor</h3>
+      <p>Pastor John</p>
+      <p>Leading with vision and passion.</p>
+    </div>
+
+    <div class="card">
+      <h3>Associate Pastor</h3>
+      <p>Pastor David</p>
+      <p>Serving the community and ministries.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section">
+  <h2>Our Core Values</h2>
+
+  <div class="cards">
+    <div class="card">🙏 Faith</div>
+    <div class="card">❤️ Love</div>
+    <div class="card">🤝 Community</div>
+    <div class="card">🔥 Growth</div>
+  </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="section">
+  <h2>Be Part of Our Family</h2>
+  <p>Join us this Sunday and experience the presence of God.</p>
+  <a href="campuses.html" style="display:inline-block;margin-top:20px;padding:10px 20px;background:#00ffd5;color:black;text-decoration:none;border-radius:5px;">
+    Find a Campus
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Shalom Church</p>
+</footer>
+
+</body>
+</html>
+```

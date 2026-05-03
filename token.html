@@ -1,0 +1,212 @@
+```html id="r2t8vn"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Visitor Token System - Shalom Church</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#0b0b0b;
+  color:white;
+}
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  z-index:1000;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo img{
+  width:40px;
+  border-radius:50%;
+}
+
+nav a{
+  color:white;
+  margin:0 10px;
+  text-decoration:none;
+}
+
+/* SECTION */
+.section{
+  padding:120px 20px 80px;
+  text-align:center;
+}
+
+.container{
+  max-width:600px;
+  margin:auto;
+}
+
+/* FORM */
+form{
+  margin-top:30px;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+input, select{
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  background:#111;
+  color:white;
+}
+
+button{
+  padding:12px;
+  background:#00ffd5;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:0.8;
+}
+
+/* TOKEN DISPLAY */
+.token-box{
+  margin-top:30px;
+  padding:20px;
+  background:#111;
+  border-radius:15px;
+  display:none;
+}
+
+.token-number{
+  font-size:50px;
+  font-weight:bold;
+  color:#00ffd5;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  padding:30px;
+  text-align:center;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">
+    <img src="assets/images/logo.png" alt="logo">
+    <h2>SHALOM</h2>
+  </div>
+
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="campuses.html">Campuses</a>
+    <a href="prayer.html">Prayer</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- TOKEN SYSTEM -->
+<section class="section">
+  <div class="container">
+    <h1>Visitor Entry / Token System</h1>
+    <p style="margin-top:10px;">Reception desk: Enter visitor details to generate token.</p>
+
+    <form id="tokenForm">
+      <input type="text" id="name" placeholder="Visitor Name" required>
+      <input type="text" id="phone" placeholder="Phone Number">
+
+      <select id="campus">
+        <option>Trivandrum</option>
+        <option>Kollam</option>
+        <option>Neyyattinkara</option>
+      </select>
+
+      <select id="cabin">
+        <option>Pastor Cabin</option>
+        <option>Prayer Room</option>
+        <option>Counseling</option>
+      </select>
+
+      <button type="submit">Generate Token 🎟️</button>
+    </form>
+
+    <!-- TOKEN DISPLAY -->
+    <div class="token-box" id="tokenBox">
+      <p>Your Token Number</p>
+      <div class="token-number" id="tokenNumber">0</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Shalom Church</p>
+</footer>
+
+<script>
+// 🔴 Replace with your Apps Script URL
+const API_URL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
+
+document.getElementById("tokenForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  fetch(API_URL, {
+    method: "POST",
+    body: JSON.stringify({
+      type: "token",
+      name: document.getElementById("name").value,
+      phone: document.getElementById("phone").value,
+      campus: document.getElementById("campus").value,
+      cabin: document.getElementById("cabin").value
+    })
+  })
+  .then(res => res.text())
+  .then(token => {
+    document.getElementById("tokenNumber").innerText = token;
+    document.getElementById("tokenBox").style.display = "block";
+    document.getElementById("tokenForm").reset();
+  })
+  .catch(() => {
+    alert("Error generating token");
+  });
+});
+</script>
+
+</body>
+</html>
+```

@@ -1,0 +1,208 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard - Shalom Church</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#0b0b0b;
+  color:white;
+}
+
+/* NAV */
+nav{
+  padding:15px 30px;
+  background:#000;
+  display:flex;
+  justify-content:space-between;
+}
+
+.section{
+  padding:20px;
+}
+
+/* FILTER */
+.filter{
+  margin:20px 0;
+}
+
+select{
+  padding:10px;
+  border-radius:5px;
+  border:none;
+}
+
+/* TABLE */
+table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:20px;
+}
+
+th, td{
+  padding:10px;
+  border-bottom:1px solid #333;
+  text-align:left;
+}
+
+th{
+  background:#111;
+}
+
+tr:hover{
+  background:#1a1a1a;
+}
+
+/* STATUS */
+.status{
+  margin-top:10px;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h2>Admin Dashboard</h2>
+</nav>
+
+<div class="section">
+
+  <h2>Prayer Requests</h2>
+
+  <div class="filter">
+    <label>Filter by Campus:</label>
+    <select id="campusFilter">
+      <option value="All">All</option>
+      <option>Trivandrum</option>
+      <option>Kollam</option>
+      <option>Neyyattinkara</option>
+    </select>
+  </div>
+
+  <table id="prayerTable">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Campus</th>
+        <th>Request</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <h2 style="margin-top:40px;">Visitor Tokens</h2>
+
+  <table id="tokenTable">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Campus</th>
+        <th>Token</th>
+        <th>Cabin</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="status" id="status"></div>
+
+</div>
+
+<script>
+// 🔴 Replace with your Apps Script URL
+const API_URL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
+
+const prayerTable = document.querySelector("#prayerTable tbody");
+const tokenTable = document.querySelector("#tokenTable tbody");
+const filter = document.getElementById("campusFilter");
+const status = document.getElementById("status");
+
+let prayerData = [];
+let tokenData = [];
+
+// FETCH DATA
+function loadData(){
+  status.innerText = "Loading...";
+
+  fetch(API_URL)
+    .then(res => res.json())
+    .then(data => {
+      prayerData = data.prayers || [];
+      tokenData = data.tokens || [];
+
+      renderTables();
+      status.innerText = "Data loaded";
+    })
+    .catch(() => {
+      status.innerText = "Error loading data";
+    });
+}
+
+// RENDER TABLES
+function renderTables(){
+  const selected = filter.value;
+
+  prayerTable.innerHTML = "";
+  tokenTable.innerHTML = "";
+
+  prayerData
+    .filter(p => selected === "All" || p.campus === selected)
+    .forEach(p => {
+      prayerTable.innerHTML += `
+        <tr>
+          <td>${p.date}</td>
+          <td>${p.name}</td>
+          <td>${p.phone}</td>
+          <td>${p.campus}</td>
+          <td>${p.request}</td>
+        </tr>
+      `;
+    });
+
+  tokenData
+    .filter(t => selected === "All" || t.campus === selected)
+    .forEach(t => {
+      tokenTable.innerHTML += `
+        <tr>
+          <td>${t.date}</td>
+          <td>${t.name}</td>
+          <td>${t.phone}</td>
+          <td>${t.campus}</td>
+          <td>${t.token}</td>
+          <td>${t.cabin}</td>
+        </tr>
+      `;
+    });
+}
+
+// FILTER CHANGE
+filter.addEventListener("change", renderTables);
+
+// AUTO REFRESH (every 10 sec)
+setInterval(loadData, 10000);
+
+// INITIAL LOAD
+loadData();
+</script>
+
+</body>
+</html>
+```

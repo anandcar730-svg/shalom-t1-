@@ -1,0 +1,232 @@
+```html id="t9x4pz"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Shalom Church</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#0b0b0b;
+  color:white;
+}
+
+/* NAVBAR */
+nav{
+  position:fixed;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  z-index:1000;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo img{
+  width:40px;
+  border-radius:50%;
+}
+
+nav a{
+  color:white;
+  margin:0 10px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#00ffd5;
+}
+
+/* SECTION */
+.section{
+  padding:120px 20px 80px;
+  text-align:center;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+}
+
+/* CONTACT BOX */
+.contact-box{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+  margin-top:40px;
+}
+
+.info{
+  text-align:left;
+}
+
+.info p{
+  margin:10px 0;
+}
+
+/* FORM */
+form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+input, textarea{
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  background:#111;
+  color:white;
+}
+
+textarea{
+  min-height:120px;
+}
+
+button{
+  padding:12px;
+  background:#00ffd5;
+  border:none;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:0.8;
+}
+
+/* MAP */
+iframe{
+  width:100%;
+  height:300px;
+  border:0;
+  border-radius:10px;
+  margin-top:30px;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  padding:30px;
+  text-align:center;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  padding:15px;
+  border-radius:50%;
+  text-decoration:none;
+  color:white;
+  font-size:20px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .contact-box{
+    grid-template-columns:1fr;
+  }
+
+  nav{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">
+    <img src="assets/images/logo.png" alt="logo">
+    <h2>SHALOM</h2>
+  </div>
+
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="campuses.html">Campuses</a>
+    <a href="prayer.html">Prayer</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- CONTACT SECTION -->
+<section class="section">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p style="margin-top:10px;">We’d love to hear from you.</p>
+
+    <div class="contact-box">
+
+      <!-- INFO -->
+      <div class="info">
+        <h3>Get in Touch</h3>
+        <p>📞 +91 8590491968</p>
+        <p>📍 Trivandrum, Kerala</p>
+        <p>✉️ yourchurch@email.com</p>
+
+        <a href="https://wa.me/918590491968" target="_blank" 
+           style="display:inline-block;margin-top:15px;padding:10px 20px;background:#25D366;color:white;text-decoration:none;border-radius:5px;">
+           Chat on WhatsApp
+        </a>
+      </div>
+
+      <!-- FORM -->
+      <form id="contactForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+
+    </div>
+
+    <!-- GOOGLE MAP -->
+    <iframe src="https://www.google.com/maps?q=Trivandrum&output=embed"></iframe>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Shalom Church</p>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="whatsapp" href="https://wa.me/918590491968" target="_blank">💬</a>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  alert("Message sent successfully!");
+});
+</script>
+
+</body>
+</html>
+```

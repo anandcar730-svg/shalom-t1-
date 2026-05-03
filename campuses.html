@@ -1,0 +1,191 @@
+```html id="l8q2zp"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campuses - Shalom Church</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#0b0b0b;
+  color:white;
+}
+
+nav{
+  position:fixed;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  z-index:1000;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo img{
+  width:40px;
+  border-radius:50%;
+}
+
+nav a{
+  color:white;
+  margin:0 10px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#00ffd5;
+}
+
+.section{
+  padding:100px 20px;
+  text-align:center;
+}
+
+.container{
+  max-width:1000px;
+  margin:auto;
+}
+
+/* CAMPUS CARD */
+.campus{
+  background:rgba(255,255,255,0.05);
+  margin-top:40px;
+  padding:20px;
+  border-radius:15px;
+  text-align:left;
+}
+
+.campus h2{
+  margin-bottom:10px;
+}
+
+iframe{
+  width:100%;
+  height:300px;
+  border:0;
+  margin-top:15px;
+  border-radius:10px;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 20px;
+  background:#00ffd5;
+  color:black;
+  text-decoration:none;
+  border-radius:5px;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  padding:30px;
+  text-align:center;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">
+    <img src="assets/images/logo.png" alt="logo">
+    <h2>SHALOM</h2>
+  </div>
+
+  <div>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="campuses.html">Campuses</a>
+    <a href="prayer.html">Prayer</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<section class="section">
+  <div class="container">
+    <h1>Our Campuses</h1>
+    <p style="margin-top:10px;">Find a Shalom Church near you and join us in worship.</p>
+
+    <!-- CAMPUS 1 -->
+    <div class="campus">
+      <h2>📍 Trivandrum Main Campus</h2>
+      <p><strong>Service Time:</strong> Sunday 10:00 AM</p>
+      <p><strong>Pastor:</strong> Pastor John</p>
+      <p><strong>Phone:</strong> +91 8590491968</p>
+
+      <iframe src="https://www.google.com/maps?q=Trivandrum&output=embed"></iframe>
+
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Trivandrum" target="_blank" class="btn">
+        Get Directions
+      </a>
+    </div>
+
+    <!-- CAMPUS 2 -->
+    <div class="campus">
+      <h2>📍 Kollam Branch Campus</h2>
+      <p><strong>Service Time:</strong> Sunday 9:00 AM</p>
+      <p><strong>Pastor:</strong> Pastor David</p>
+      <p><strong>Phone:</strong> +91 8590491968</p>
+
+      <iframe src="https://www.google.com/maps?q=Kollam&output=embed"></iframe>
+
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Kollam" target="_blank" class="btn">
+        Get Directions
+      </a>
+    </div>
+
+    <!-- CAMPUS 3 -->
+    <div class="campus">
+      <h2>📍 Neyyattinkara Campus</h2>
+      <p><strong>Service Time:</strong> Sunday 8:30 AM</p>
+      <p><strong>Pastor:</strong> Pastor Samuel</p>
+      <p><strong>Phone:</strong> +91 8590491968</p>
+
+      <iframe src="https://www.google.com/maps?q=Neyyattinkara&output=embed"></iframe>
+
+      <a href="https://www.google.com/maps/dir/?api=1&destination=Neyyattinkara" target="_blank" class="btn">
+        Get Directions
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Shalom Church</p>
+</footer>
+
+</body>
+</html>
+```

@@ -1,0 +1,147 @@
+```css
+/* =========================
+   GLOBAL MOBILE (≤ 1024px)
+========================= */
+@media (max-width:1024px){
+
+  .section{
+    padding:80px 20px;
+  }
+
+  .container{
+    padding:0 15px;
+  }
+
+  .hero h1{
+    font-size:40px;
+  }
+
+}
+
+/* =========================
+   TABLET (≤ 768px)
+========================= */
+@media (max-width:768px){
+
+  /* NAVBAR handled in navbar.css */
+
+  .hero{
+    height:80vh;
+  }
+
+  .hero h1{
+    font-size:32px;
+  }
+
+  .hero p{
+    font-size:16px;
+  }
+
+  /* GRID STACK */
+  .cards{
+    grid-template-columns:1fr;
+  }
+
+  /* CONTACT PAGE */
+  .contact-box{
+    grid-template-columns:1fr;
+  }
+
+  /* CAMPUS */
+  .campus{
+    padding:15px;
+  }
+
+  iframe{
+    height:250px;
+  }
+
+  /* FORMS */
+  form{
+    width:100%;
+  }
+
+  input, textarea, select{
+    font-size:14px;
+  }
+
+  /* ADMIN TABLE */
+  table{
+    font-size:12px;
+  }
+
+  th, td{
+    padding:8px;
+  }
+
+}
+
+/* =========================
+   MOBILE (≤ 480px)
+========================= */
+@media (max-width:480px){
+
+  body{
+    font-size:14px;
+  }
+
+  .hero{
+    height:70vh;
+  }
+
+  .hero h1{
+    font-size:26px;
+  }
+
+  .hero p{
+    font-size:14px;
+  }
+
+  .section{
+    padding:60px 10px;
+  }
+
+  /* BUTTONS */
+  .btn, button{
+    width:100%;
+    text-align:center;
+  }
+
+  /* LOGO */
+  .logo h2{
+    font-size:16px;
+  }
+
+  .logo img{
+    width:30px;
+  }
+
+  /* TOKEN DISPLAY */
+  .token-number{
+    font-size:36px;
+  }
+
+  /* TABLE SCROLL FIX */
+  table{
+    display:block;
+    overflow-x:auto;
+    white-space:nowrap;
+  }
+
+}
+
+/* =========================
+   EXTRA SMALL DEVICES (≤ 360px)
+========================= */
+@media (max-width:360px){
+
+  .hero h1{
+    font-size:22px;
+  }
+
+  .hero p{
+    font-size:13px;
+  }
+
+}
+```
